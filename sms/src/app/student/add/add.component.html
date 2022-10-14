@@ -1,0 +1,44 @@
+<div class="container col-4">
+    <form [formGroup]="studentForm" autocomplete="off">
+        <div class="mb-1">
+            <label for="name" class="form-label">Name</label>
+            <div class="input-group has-validation">
+                <input type="text" #name [ngClass]="{'form-control': true, 'is-invalid': studentForm.get('name')?.invalid &&
+                (studentForm.get('name')?.dirty || studentForm.get('name')?.touched)}" id="name" name="name"
+                    formControlName="name" placeholder="Name">
+                <div class="invalid-feedback">
+                    This field is required.
+                </div>
+            </div>
+        </div>
+        <div class="mb-1">
+            <label for="mobile" class="form-label">Mobile</label>
+            <div class="input-group has-validation">
+                <input type="number" maxlength="10" [ngClass]="{'form-control': true, 'is-invalid': studentForm.get('mobile')?.invalid &&
+                (studentForm.get('mobile')?.dirty || studentForm.get('mobile')?.touched)}" id="mobile" name="mobile"
+                    formControlName="mobile" placeholder="Mobile">
+                <div class="invalid-feedback">
+                    This field is required.
+                </div>
+            </div>
+        </div>
+        <div class="mb-1">
+            <label for="email" class="form-label">Email</label>
+            <div class="input-group has-validation">
+                <input type="email" [ngClass]="{'form-control': true, 'is-invalid': studentForm.get('email')?.invalid &&
+                    (studentForm.get('email')?.dirty || studentForm.get('email')?.touched)}" id="email" name="email"
+                    formControlName="email" placeholder="xyz@gmail.com">
+                <div class="invalid-feedback">
+                    {{studentForm.get('email')?.hasError('required') ? 'This field is required.':'Invalid Email'}}
+                </div>
+            </div>
+        </div>
+        <div class="mb-1">
+            <button (click)="save()" [disabled]="studentForm.invalid" class="btn btn-primary" type="button">
+                {{id==0 || id==null ?'Save':'Update'}} Student</button>
+        </div>
+        <div class="mb-1">
+            {{studentForm.value | json}}
+        </div>
+    </form>
+</div>
