@@ -4,26 +4,25 @@ import { Student } from './student';
 @Injectable({
   providedIn: 'root'
 })
-export class StudentService 
-{
+export class StudentService {
   private studentList: Student[] = [
     {
-      id:1,
-      name:"Abc",
+      id: 1,
+      name: "Abc",
       email: "abc@def.com",
-      mobile: 9000000000,
-      address: "Nandyal, Kurnool"
+      address: "Nandyal, A.p",
+      phno: 9123456789
     },
     {
-      id:2,
-      name:"Ghi",
+      id: 2,
+      name: "Def",
       email: "ghi@jkl.com",
-      mobile: 9000000001,
-      address: "Nandyal, Kurnool"
+      address: "Nandyal, A.p",
+      phno: 8123456789
     }    
   ];
   constructor() { }
-  getAllStudents()  {
+  getAllStudents(){
     return this.studentList;
   }
 
@@ -38,12 +37,12 @@ export class StudentService
 
   updateStudent(student: Student){
     const index = this.studentList.findIndex(x => x.id == student.id);
-    if(index != null && index != undefined){
+    if(index != undefined && index != null){
       this.studentList[index] = student;
     }
   }
 
-  removeStudent(id: number){
+  deleteStudent(id: number){
     this.studentList = this.studentList.filter(x => x.id != id);
   }
 }

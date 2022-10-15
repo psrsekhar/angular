@@ -52,5 +52,4 @@ export class AddComponent implements OnInit {
     }
     this.router.navigate(['/list']);
   }
-
 }

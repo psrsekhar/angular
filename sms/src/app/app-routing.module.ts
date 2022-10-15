@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { AddComponent } from './add/add.component';
 import { HomeComponent } from './home/home.component';
-import { AddComponent } from './student/add/add.component';
-import { ListComponent } from './student/list/list.component';
+import { ListComponent } from './list/list.component';
 
 const routes: Routes = [
-  {path:'', component:HomeComponent},
-  {path:'list', component:ListComponent},
-  {path:'add',component:AddComponent},
-  {path:'update/:id', component:AddComponent}
+  {"path": "", component: HomeComponent},
+  {"path": "add", component: AddComponent},
+  {"path": "list", component: ListComponent},
+  {"path": "update/:id", component: AddComponent}
 ];
 
 @NgModule({

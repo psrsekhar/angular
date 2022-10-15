@@ -11,9 +11,9 @@ export class ListComponent implements OnInit {
     studentList: Student[] = [];
     first = 0;
     rows = 10;
-    constructor(private userService: StudentService) {}
+    constructor(private studentService: StudentService) {}
     ngOnInit(): void {
-        this.studentList = this.userService.getAllStudents();
+        this.studentList = this.studentService.getAllStudents();
     }
     next() {
         this.first = this.first + this.rows;
@@ -31,7 +31,7 @@ export class ListComponent implements OnInit {
         return this.studentList ? this.first === 0 : true;
     }
     remove(id: number) {
-        this.userService.removeStudent(id);
-        this.studentList = this.userService.getAllStudents();
+        this.studentService.deleteStudent(id);
+        this.studentList = this.studentService.getAllStudents();
     }
 }
