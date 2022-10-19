@@ -5,16 +5,20 @@
         <ng-template pTemplate="header">
             <tr>
                 <th>Name</th>
+                <th>Department</th>
                 <th>Email</th>
                 <th>Mobile</th>
+                <th>Address</th>
                 <th>Action</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-student>
             <tr [ngClass]="{'inActive': student.isActive == false}">
                 <td>{{student.name}}</td>
+                <td>{{student.department}}</td>
                 <td>{{student.email}}</td>
-                <td>{{student.mobile}}</td>
+                <td>{{student.phno}}</td>
+                <td>{{student.address}}</td>
                 <td>
                     <a pButton pRipple type="button" [routerLink]="['/update',student.id]" icon="pi pi-user-edit"
                         class="p-button-rounded"></a>

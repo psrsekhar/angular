@@ -11,14 +11,16 @@ export class StudentService {
       name: "Abc",
       email: "abc@def.com",
       address: "Nandyal, A.p",
-      phno: 9123456789
+      phno: 9123456789,
+      department: "ece"
     },
     {
       id: 2,
       name: "Def",
       email: "ghi@jkl.com",
       address: "Nandyal, A.p",
-      phno: 8123456789
+      phno: 8123456789,
+      department: "ece"
     }    
   ];
   constructor() { }
